@@ -1,0 +1,6 @@
+{
+	"id":"wheel",
+	"gid":3000,
+	"members": ["admin","user"]
+	
+}

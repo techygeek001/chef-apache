@@ -25,7 +25,7 @@ node["apaache"]["sites"].each do |sitename,data|
 		recursive true
 	end
 
-if node["platform"] == "centos2"
+if node["platform"] == "centos"
 	config_location = "/etc/httpd/conf.d/#{sitename}.conf"
 elsif node["platform"] == "ubuntu"
 	config_location = "/etc/apache2/sites-enabled/#{sitename}.conf"
@@ -48,7 +48,8 @@ end
 		mode 0644
 		variables(
 			:site_title => data["site_title"],
-			:comingsoon => "Coming Soon!"
+			:comingsoon => "Coming Soon!",
+			:author_name => node["author"]["name"]
 
 		)
 	end
